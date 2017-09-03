@@ -48,7 +48,7 @@ endif
 set number
 set list
 set listchars=tab:>-,trail:-
-set ts=4
+set ts=2
 set expandtab
 
 " fonts
@@ -67,7 +67,7 @@ colorscheme custom
 set backspace=indent,eol,start
 
 " indent
-set sw=4
+set sw=2
 
 """"""""""""""""""""""""""""""
 " Vundle config
@@ -83,7 +83,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'justinj/vim-react-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'darthmall/vim-vue'
+Plugin 'posva/vim-vue'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -107,6 +107,7 @@ autocmd vimenter * NERDTree
 
 " jsx
 let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 1
 
 " eslint
 " let g:syntastic_javascript_checkers = ['standard']
@@ -122,6 +123,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" vue
+autocmd FileType vue syntax sync fromstart
 
 set foldmethod=indent
 set nobackup
